@@ -1,0 +1,38 @@
+export const CategoryItems=[
+    {
+        id:1,
+        name:'Bananas'
+    },
+    {
+        id:2,
+        name:'Peanuts'
+    },
+    {
+        id:3,
+        name:'Steak'
+    },
+    {
+        id:4,
+        name:'Chicken Eggs'
+    },
+    {
+        id:5,
+        name:'SPinach'
+    },
+    {
+        id:6,
+        name:'Apples'
+    },
+    {
+        id:7,
+        name:'Potatoes'
+    },
+    {
+        id:8,
+        name:'Poultry'
+    },
+    {
+        id:9,
+        name:'Milk'
+    },
+]
