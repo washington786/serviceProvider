@@ -7,6 +7,7 @@ import Stock from '../screens/MainPages/drawer-pages/stock/Stock';
 import Reports from '../screens/MainPages/drawer-pages/reports/Reports';
 import CustomDrawer from './CustomDrawer';
 import { GlobalColors } from '../global/Colors/GlobalColors';
+import ChatStackNavigation from './ChatStackNavigation';
 
 const Drawer = createDrawerNavigator();
 
@@ -25,7 +26,7 @@ const DrawerNavigation = () => {
      }}>
       <Drawer.Screen name='Dashboard' component={Dashboard}/>
       <Drawer.Screen name='orderHistory' component={OrderHistory}/>
-      <Drawer.Screen name='messages' component={ChatListsScreen}/>
+      <Drawer.Screen name='messages' component={ChatStackNavigation}/>
       <Drawer.Screen name='stock' component={Stock}/>
       <Drawer.Screen name='reports' component={Reports}/>
     </Drawer.Navigator>

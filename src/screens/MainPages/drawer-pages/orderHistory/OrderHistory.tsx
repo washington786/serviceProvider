@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MainContainerStyles } from "../../../../styles/MainContainers";
 import { useNavigation } from "@react-navigation/native";
 
-import Icons from 'react-native-vector-icons/Feather'
+import Icons from 'react-native-vector-icons/Feather';
 import { GlobalColors } from "../../../../global/Colors/GlobalColors";
 import { Caption } from "react-native-paper";
 import { FlatList } from "react-native-gesture-handler";

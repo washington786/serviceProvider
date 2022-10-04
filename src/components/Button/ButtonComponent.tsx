@@ -3,9 +3,9 @@ import React from "react";
 import { GlobalColors } from "../../global/Colors/GlobalColors";
 
 interface Styles{
-    btnCustomStyle: Object,
+    btnCustomStyle?: Object,
     title: string,
-    onPressHandler: ()=>{},
+    onPressHandler(): any,
 }
 const ButtonComponent = (props: Styles) => {
   return (

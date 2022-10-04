@@ -32,12 +32,18 @@ const Stock = () => {
 
   const [modalVisible, setModalVisible] = React.useState(false);
 
+  const [updateModalVisible, setUpdateModalVisible] = React.useState(false);
+
   const handleOpenAddProduct = () => {
     setModalVisible(!modalVisible);
   };
 
   const handleCloseModal = () => {
     setModalVisible(!modalVisible);
+  };
+
+  const handleUpdateCloseModal = () => {
+    setUpdateModalVisible(!updateModalVisible);
   };
 
   React.useEffect(() => {
@@ -57,14 +63,20 @@ const Stock = () => {
   }, []);
 
   const onSubmitHandler = () => {
-    console.log("Pressed!!!");
+    setModalVisible(false);
+  };
+
+  const onSubmitUpdateHandler = () => {
+    setUpdateModalVisible(false);
   };
 
   onselectionchange = (selectedItem) => {
     setSelected(selected);
   };
 
-  const handleStockPressed = () => {};
+  const handleStockPressed = () => {
+    setUpdateModalVisible(!updateModalVisible)
+  };
 
   return (
     <SafeAreaView style={MainContainerStyles.safeArea}>
@@ -134,6 +146,75 @@ const Stock = () => {
               title="add product"
               btnCustomStyle={styles.btn}
               onPressHandler={onSubmitHandler}
+            />
+          </View>
+        </Modal>
+
+        <Modal
+          style={MainContainerStyles.modal}
+          animationType="fade"
+          visible={updateModalVisible}
+          transparent={false}
+        >
+          <HeaderIconToolBar
+            title="Update Product"
+            onPressHandler={handleUpdateCloseModal}
+          />
+          <View style={MainContainerStyles.container}>
+            <ImageCard customStyle={styles.imgCard} />
+            <View style={styles.inputsCon}>
+              
+              <SelectedCategoryCard />
+
+              <InputStore
+                placeholder="Product Name"
+                keyboardTypes="default"
+                inputStyle
+                textConfig={
+                  {
+                    value:'Bananas'
+                  }
+                }
+              />
+
+              <InputStore
+                placeholder="R0.00"
+                keyboardTypes="number-pad"
+                inputStyle
+                textConfig={
+                  {
+                    value:'R190.00'
+                  }
+                }
+              />
+
+              <InputStore
+                placeholder="Item Quantity"
+                keyboardTypes="number-pad"
+                inputStyle
+                textConfig={
+                  {
+                    value:'45'
+                  }
+                }
+              />
+
+              <TextArea
+                customStyle={styles.textArea}
+                numberOfLines={2}
+                placeholder="Description"
+                textConfig={
+                  {
+                    value:'a box of bananas, contains 50 bananas in total, 5kg box.'
+                  }
+                }
+              />
+            </View>
+
+            <ButtonComponent
+              title="update product"
+              btnCustomStyle={styles.btn}
+              onPressHandler={onSubmitUpdateHandler}
             />
           </View>
         </Modal>

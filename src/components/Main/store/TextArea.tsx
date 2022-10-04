@@ -6,6 +6,7 @@ interface Data{
   placeholder: string;
   customStyle: object;
   numberOfLines: number;
+  textConfig?:Object;
 }
 
 const TextArea = (props: Data) => {
@@ -17,6 +18,7 @@ const TextArea = (props: Data) => {
         numberOfLines={props.numberOfLines}
         style={styles.input}
         keyboardType="default"
+        {...props.textConfig}
       />
     </View>
   );

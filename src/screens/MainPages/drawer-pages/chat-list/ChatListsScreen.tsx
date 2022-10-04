@@ -23,7 +23,7 @@ const ChatListsScreen = () => {
   },[] )
 
   const handleChatPress = () => {
-    // navigation.navigate('');
+    navigation.navigate('chats');
   };
 
   return (

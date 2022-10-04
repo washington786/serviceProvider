@@ -25,4 +25,5 @@ export const GlobalColors = {
     cWhite9:'rgba(255, 255, 255, 0.9)',
     lowWhite:'#F4F4F4',
     card:'#F4F6F5',
+    cancelBtnColor:'#0CBC8B'
 }

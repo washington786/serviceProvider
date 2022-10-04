@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, ScrollView, View,Modal } from "react-native";
+import { FlatList, StyleSheet, ScrollView, View, Modal,TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MainContainerStyles } from "../../../../styles/MainContainers";
@@ -14,7 +14,8 @@ import { OrderData } from "../../../../data/OrderData";
 import { useNavigation } from "@react-navigation/native";
 
 import { useState } from "react";
-import OrderDetailsModal from "../../../../components/Main/drawer/OrderDetailsModal";
+import HeaderIconToolBar from "../../../../components/Global/HeaderIconToolBar";
+import ButtonComponent from "../../../../components/Button/ButtonComponent";
 
 const Dashboard = () => {
   const navigation = useNavigation();
@@ -24,7 +25,12 @@ const Dashboard = () => {
   const date = new Date();
 
   const handleOrderClick = () => {
-    navigation.navigate('orderDetails');
+    setModalVisible(false);
+  };
+
+  const handleTransitToChat = () => {
+    setModalVisible(false);
+    // navigation.navigate("reports");
   };
 
   return (
@@ -57,7 +63,7 @@ const Dashboard = () => {
                 customerName={itemData.customerName}
                 orderNo={itemData.id}
                 orderStatus={itemData.orderStatus}
-                onClickMethod={()=>setModalVisible(true)}
+                onClickMethod={() => setModalVisible(true)}
                 key={itemData.id}
               />
             );
@@ -70,9 +76,113 @@ const Dashboard = () => {
             animationType="fade"
             transparent={false}
           >
-            <View>
-              <Title>Hey There Modal!!!!</Title>
+            <HeaderIconToolBar
+              title="Order Details"
+              onPressHandler={handleOrderClick}
+            />
+
+            <View style={MainContainerStyles.container}>
+              <View
+                style={{
+                  width: "100%",
+                  backgroundColor: GlobalColors.cWhite4,
+                  elevation: 0.4,
+                  paddingHorizontal: 5,
+                  paddingVertical: 6,
+                  marginTop: 30,
+                }}
+              >
+                <View
+                  style={{ alignItems: "flex-end", justifyContent: "flex-end" }}
+                >
+                  <Caption>10:40am</Caption>
+                </View>
+
+                <View style={{ paddingVertical: 8 }}>
+                  <View
+                    style={{
+                      borderBottomColor: GlobalColors.grey1,
+                      borderBottomWidth: 0.4,
+                      paddingBottom: 5,
+                    }}
+                  >
+                    <Title>Customer Name: Daniel Washington</Title>
+                    <View
+                      style={{ flexDirection: "row", alignItems: "center" }}
+                    >
+                      <Icons
+                        name="map-pin"
+                        size={16}
+                        color={GlobalColors.grey4}
+                      />
+                      <Caption style={{ paddingHorizontal: 8 }}>
+                        123th Avenue Str, Laden, Pretoria
+                      </Caption>
+                    </View>
+                  </View>
+                  <View style={{ marginTop: 8 }}>
+                    <Caption>#484hd94jd9</Caption>
+                    <Caption>Product Name: Macaramba Spinach, & Zuas</Caption>
+                    <Caption>Order Amount: R199.99</Caption>
+                    <Caption>Despatch Date: 13-Aug-2022</Caption>
+                    <Caption>Paid</Caption>
+                  </View>
+                </View>
+              </View>
+
+              <View style={{ marginTop: 15 }}>
+                <View>
+                  <ButtonComponent
+                    title="Cancel"
+                    btnCustomStyle={{
+                      backgroundColor: GlobalColors.cancelBtnColor,
+                    }}
+                    onPressHandler={handleOrderClick}
+                  />
+                </View>
+                <View>
+                  <ButtonComponent
+                    title="Ready"
+                    onPressHandler={handleOrderClick}
+                  />
+                </View>
+              </View>
             </View>
+
+
+            <View
+              style={{
+                width: 70,
+                height: 70,
+                borderRadius: 100,
+                backgroundColor: GlobalColors.primaryColor,
+                alignItems: "center",
+                justifyContent: "center",
+                position: "absolute",
+                bottom: 15,
+                right: 15,
+                overflow: "hidden",
+                zIndex:-1
+              }}
+            >
+              <TouchableOpacity
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  zIndex:100,
+                }}
+                onPress={handleTransitToChat}
+              >
+                <Icons
+                  name="message-square"
+                  size={30}
+                  color={GlobalColors.white}
+                />
+              </TouchableOpacity>
+            </View>
+
           </Modal>
           {/* <View>
             <FlatList
@@ -122,8 +232,8 @@ const styles = StyleSheet.create({
   caption: {
     paddingHorizontal: 5,
   },
-  modalCon:{
+  modalCon: {
     flex: 1,
     backgroundColor: GlobalColors.white,
-}
+  },
 });
