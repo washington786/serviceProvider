@@ -28,7 +28,7 @@ const Login = () => {
     "inter-thin": require("../../../global/Fonts/Inter-Thin.ttf"),
     "roboto-black": require("../../../global/Fonts/Roboto-Black.ttf"),
     "roboto-bold": require("../../../global/Fonts/Roboto-Bold.ttf"),
-    "roboto-light": require("../../../global/Fonts/Roboto-Light.ttf"),
+    // "roboto-light": require("../../../global/Fonts/Roboto-Light.ttf"),
     "roboto-medium": require("../../../global/Fonts/Roboto-Medium.ttf"),
     "roboto-regular": require("../../../global/Fonts/Roboto-Regular.ttf"),
     "roboto-thin": require("../../../global/Fonts/Roboto-Thin.ttf"),

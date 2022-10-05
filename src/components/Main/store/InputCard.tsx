@@ -10,7 +10,7 @@ const InputCard = () => {
       <InputStore placeholder='email address' keyboardTypes='email-address' inputStyle/>
       <InputStore placeholder='Office number' keyboardTypes='number' inputStyle/>
       <InputStore placeholder='office alternative number' keyboardTypes='number' inputStyle/>
-      <TextArea/>
+      <TextArea placeholder='Enter Store description' numberOfLines={3} />
     </View>
   )
 }

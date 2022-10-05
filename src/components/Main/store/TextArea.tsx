@@ -4,8 +4,8 @@ import { GlobalColors } from "../../../global/Colors/GlobalColors";
 
 interface Data{
   placeholder: string;
-  customStyle: object;
-  numberOfLines: number;
+  customStyle?: object;
+  numberOfLines?: number;
   textConfig?:Object;
 }
 

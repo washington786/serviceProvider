@@ -3,6 +3,7 @@ import React from 'react';
 
 import Logo from '../../Assets/logo.png';
 import { AuthTopStyle } from '../../styles/AuthTop';
+import { Caption } from "react-native-paper";
 
 interface Tops{
     mainStyle: Object,
@@ -21,7 +22,7 @@ const Top = (props: Tops) => {
       </View>
       <View style={AuthTopStyle.textsCon}>
         <Text style={[AuthTopStyle.title,props.titleStyle]}>{props.title}</Text>
-        <Text style={[AuthTopStyle.subTitle,props.subTitleStyle]}>{props.sub_title}</Text>
+        <Caption style={[AuthTopStyle.subTitle,props.subTitleStyle]}>{props.sub_title}</Caption>
       </View>
     </View>
   )
