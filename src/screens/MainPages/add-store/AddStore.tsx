@@ -15,8 +15,7 @@ const AddStore = () => {
     navigation.navigate("addStorePayment");
   };
   return (
-    <SafeAreaView style={{ flex:1 }}>
-
+    <SafeAreaView style={{ flex: 1 }}>
       <HeaderToolBar title="Add Store" />
 
       <View style={[MainContainerStyles.root, styles.con]}>
