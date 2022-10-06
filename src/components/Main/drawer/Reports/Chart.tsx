@@ -1,37 +1,29 @@
-import VerticalBarGraph from '@chartiful/react-native-vertical-bar-graph';
 import { View, StyleSheet } from 'react-native';
 import React from 'react';
 
-const config = {
-  hasXAxisBackgroundLines: false,
-  xAxisLabelStyle: {
-    position: 'left',
-    prefix: '$'
-  }
-};
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
 
-export const YourComponent = () => (
-  <View>
-    <VerticalBarGraph
-      data={[20, 45, 28, 80, 99, 43, 50]}
-      labels={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']}
-      width={375}
-      height={300}
-      barRadius={5}
-      barWidthPercentage={0.65}
-      baseConfig={config}
-      style={styles.chart}
-    />
-  </View>
+const data = [
+  { quarter: 1, earnings: 13000 },
+  { quarter: 2, earnings: 16500 },
+  { quarter: 3, earnings: 14250 },
+  { quarter: 4, earnings: 19000 }
+];
+
+
+export const ReportChart = () => (
+  <View style={styles.container}>
+        <VictoryChart width={350} theme={VictoryTheme.material}>
+          <VictoryBar data={data} x="quarter" y="earnings" />
+        </VictoryChart>
+      </View>
 );
 
 const styles = StyleSheet.create({
-  chart: {
-    marginBottom: 30,
-    padding: 10,
-    paddingTop: 20,
-    borderRadius: 20,
-    backgroundColor: 'green',
-    width: 375
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f5fcff"
   }
 });

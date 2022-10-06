@@ -9,6 +9,7 @@ import { Caption, Title } from "react-native-paper";
 import { GlobalColors } from "../../../../global/Colors/GlobalColors";
 
 import Icons from "react-native-vector-icons/Feather";
+import { ReportChart } from "../../../../components/Main/drawer/Reports/Chart";
 
 const Reports = () => {
   const [modalVisible, setModalVisible] = React.useState(false);
@@ -25,6 +26,7 @@ const Reports = () => {
     <SafeAreaView style={MainContainerStyles.safeArea}>
       <View style={MainContainerStyles.container}>
         <Text>Reports</Text>
+        {/* <ReportChart/> */}
         <MonthStatementCard month="January" onPressHandler={handleOnPress} />
         <MonthStatementCard month="January" onPressHandler={handleOnPress} />
         <MonthStatementCard month="January" onPressHandler={handleOnPress} />
